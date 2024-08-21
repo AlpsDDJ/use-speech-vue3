@@ -4,7 +4,7 @@ import {ref} from "vue-demi";
 
 const defaultOptions: SpeechRecognitionOptios = {
     lang: window.navigator.language ?? 'zh-CN',
-    continuous: false,
+    continuous: true,
     interimResults: true
 }
 
@@ -58,7 +58,7 @@ export const useSpeechRecognition = (options?: SpeechRecognitionOptios): UseSpee
         }
         recognition.onend = () => {
             console.log('STT end: ', waitStop.value)
-            opts.coiled && !waitStop.value && recognition.start()
+            opts.autoRestart && !waitStop.value && recognition.start()
         }
         recognition.onerror = (event: any) => {
             console.log('STT error', event)

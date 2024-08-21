@@ -1,7 +1,7 @@
 import {Ref} from "vue-demi";
 
 export interface SpeechRecognitionOptios {
-    coiled?: boolean
+    autoRestart?: boolean
     lang?: string
     continuous?: boolean
     interimResults?: boolean

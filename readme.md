@@ -8,7 +8,6 @@ yarn add use-speech-vue3
 ```shell
 pnpm i use-speech-vue3
 ```
-## @Model 装饰器示例
 
 ```typescript
 import {useSpeechRecognition} from "use-speech-vue3";
@@ -18,9 +17,9 @@ const onSTTResult = (result?: string) => {
 }
 
 /**
- * coiled: 是否开启连续识别
+ * autoRestart: 识别意外中断后是否自动重新开始识别
  */
-const {results, speeching, speechTimer, start, stop} = useSpeechRecognition({ onresult: onSTTResult, coiled: true })
+const {results, speeching, speechTimer, start, stop} = useSpeechRecognition({ onresult: onSTTResult, autoRestart: true })
 
 // 开始识别
 await start()
